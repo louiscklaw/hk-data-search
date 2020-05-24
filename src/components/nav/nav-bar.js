@@ -26,7 +26,12 @@ function NavBar(){
             關於我
           </Link>
 
-{/*       <div className="navbar-item has-dropdown is-hoverable">
+          <Link to="/zh/app/test_helloworld" className="navbar-item">
+            test_api_details
+          </Link>
+
+        {/*
+          <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">
               More
             </a>
@@ -46,7 +51,8 @@ function NavBar(){
                 Report an issue
               </a>
             </div>
-          </div> */}
+          </div>
+          */}
         </div>
 
         <div className="navbar-end">
