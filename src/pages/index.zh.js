@@ -8,9 +8,7 @@ import App from '../components/app'
 const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" />
-    <Link to="/zh/app/test_helloworld">test</Link>
     <App />
-
   </Layout>
 )
 

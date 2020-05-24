@@ -2,18 +2,25 @@
 // called after every page is created.
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
+  let langs = ['zh']
 
-  // Only update the `/app` page.
-  // if (page.path.match(/^\/app/)) {
-  if (page.path.match(/^\/zh\/app/)) {
+  langs.forEach( lang => {
+    var test = new RegExp(`^/${lang}/api_details`)
 
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
-    page.matchPath = "/zh/app/*"
+    // Only update the `/app` page.
+    // if (page.path.match(/^\/app/)) {
+    if (page.path.match(test)) {
 
-    // Update the page.
-    createPage(page)
+      // page.matchPath is a special key that's used for matching pages
+      // with corresponding routes only on the client.
+      page.matchPath = `/${lang}/api_details/*`
 
-    console.log('findme')
-  }
+      // Update the page.
+      createPage(page)
+
+      console.log(`creating page for ${lang}`)
+    }
+
+  })
+
 }

@@ -8,7 +8,7 @@ import TestHelloworld from "../components/test_helloworld"
 const App = () => {
   return (
     <Layout>
-      <Router basepath="/zh/app">
+      <Router basepath="/zh/api_details">
         <TestHelloworld path="/test_helloworld" />
       </Router>
     </Layout>

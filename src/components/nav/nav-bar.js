@@ -26,7 +26,7 @@ function NavBar(){
             關於我
           </Link>
 
-          <Link to="/zh/app/test_helloworld" className="navbar-item">
+          <Link to="/zh/api_details/test_helloworld" className="navbar-item">
             test_api_details
           </Link>
 
