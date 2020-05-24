@@ -31,13 +31,19 @@ class GlobalContextProvider extends React.Component {
     return search_term
   }
 
+  getMatchApiManifest = () =>{
+    // let filter_by_notes = raw_all_api_manifest.filter( (x) => x.notes.search('CCI') > -1 )
+    return raw_all_api_manifest
+  }
+
   render(){
     return(
       <GlobalContext.Provider value={{
         ...this.state,
         helloworld: this.helloworld,
         getApiManifestKeys: this.getApiManifestKeys,
-        updateSearchTerm: this.updateSearchTerm
+        updateSearchTerm: this.updateSearchTerm,
+        getMatchApiManifest: this.getMatchApiManifest
       }}>
         {this.props.children}
       </GlobalContext.Provider>

@@ -2,7 +2,7 @@ import React from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 
 function ApiCardList(){
-  let {search_term, getApiManifestKeys} = React.useContext(GlobalContext)
+  let {search_term, getMatchApiManifest} = React.useContext(GlobalContext)
 
   return(
     <>
@@ -10,7 +10,7 @@ function ApiCardList(){
         {search_term}
       </pre>
       <pre>
-        {JSON.stringify(getApiManifestKeys(), null, 2)}
+        {JSON.stringify(getMatchApiManifest(), null, 2)}
       </pre>
     </>
   )
