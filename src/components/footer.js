@@ -9,21 +9,21 @@ function Footer(){
             <p>
 
               <a href="" className="social-link">
-                <i class="fab fa-facebook-square fa-2x"></i>
+                <i className="fab fa-facebook-square fa-2x"></i>
               </a>
 
               <a href="" className="social-link">
-                <i class="fab fa-twitter-square fa-2x"></i>
-              </a>
-
-
-              <a href="" className="social-link">
-                <i class="fab fa-instagram-square fa-2x"></i>
+                <i className="fab fa-twitter-square fa-2x"></i>
               </a>
 
 
               <a href="" className="social-link">
-                <i class="fab fa-snapchat-square fa-2x"></i>
+                <i className="fab fa-instagram-square fa-2x"></i>
+              </a>
+
+
+              <a href="" className="social-link">
+                <i className="fab fa-snapchat-square fa-2x"></i>
               </a>
 
             </p>

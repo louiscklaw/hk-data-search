@@ -1,9 +1,17 @@
 import React from 'react';
+import { GlobalContext } from '../context/GlobalContext';
 
 function ApiCardList(){
+  let {search_term, getApiManifestKeys} = React.useContext(GlobalContext)
+
   return(
     <>
-      ApiCardList
+      <pre>
+        {search_term}
+      </pre>
+      <pre>
+        {JSON.stringify(getApiManifestKeys(), null, 2)}
+      </pre>
     </>
   )
 }
