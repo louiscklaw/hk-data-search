@@ -31,9 +31,37 @@ class GlobalContextProvider extends React.Component {
     return search_term
   }
 
-  getMatchApiManifest = () =>{
+  getResultsFromApiManifest = (search_term, field) => {
+    return   Object.entries(raw_all_api_manifest)
+    .filter( (x) => { return x[1].result[field].search(search_term) > -1 })
+    .map(x => x[0])
+  }
+
+  getResourcesFromApiManifest = (search_term, field) => {
+    return Object.entries( raw_all_api_manifest ).filter( x => {
+      let found = false
+      x[ 1 ].result.resources.forEach(x => {
+        if (x.description.search('CCI') > -1){
+          found = true
+        }
+      })
+      return found
+    } )
+    .map(x => x[0])
+  }
+
+  getMatchApiManifest = (search_word) =>{
     // let filter_by_notes = raw_all_api_manifest.filter( (x) => x.notes.search('CCI') > -1 )
-    return raw_all_api_manifest
+    let test = new Set(this.getResultsFromApiManifest(search_word, 'title'))
+    return test
+  }
+
+  getApiByName = (api_name) => {
+    return raw_all_api_manifest[api_name]
+  }
+
+  genApiTagsByName = (api_name) => {
+    return ['XML','運輸','中華電力有限公司']
   }
 
   render(){
@@ -43,7 +71,9 @@ class GlobalContextProvider extends React.Component {
         helloworld: this.helloworld,
         getApiManifestKeys: this.getApiManifestKeys,
         updateSearchTerm: this.updateSearchTerm,
-        getMatchApiManifest: this.getMatchApiManifest
+        getMatchApiManifest: this.getMatchApiManifest,
+        getApiByName: this.getApiByName,
+        genApiTagsByName: this.genApiTagsByName
       }}>
         {this.props.children}
       </GlobalContext.Provider>
