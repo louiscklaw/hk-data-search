@@ -7,7 +7,13 @@ let default_state = {
   hello_state:'hello_state',
   package_list,
   raw_all_api_manifest,
-  search_term: ''
+  search_term: '',
+  helloworld: () => {},
+  getApiManifestKeys: ()=>{},
+  updateSearchTerm: ()=>{},
+  getMatchApiManifest: ()=>{ return new Set([])},
+  getApiByName: ()=>{},
+  genApiTagsByName: ()=>{}
 }
 
 export const GlobalContext = React.createContext(default_state)

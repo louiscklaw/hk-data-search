@@ -1,12 +1,10 @@
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
-exports.onCreatePage = async ({ page, actions }) => {
+exports.onCreatePage = async  ({ page, actions }) => {
   const { createPage } = actions
   let langs = ['zh']
-
   langs.forEach( lang => {
     var test = new RegExp(`^/${lang}/api_details`)
-
     // Only update the `/app` page.
     // if (page.path.match(/^\/app/)) {
     if (page.path.match(test)) {

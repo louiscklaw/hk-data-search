@@ -15,28 +15,58 @@ const Container = styled.div`
 
 function TestCards(){
   let {getMatchApiManifest, getApiByName, genApiTagsByName} = React.useContext(GlobalContext);
-
-  return (
-    <Container>
-      {
-        [...getMatchApiManifest('CCI')].map( x => {
-          let api_full_info = getApiByName(x)
-          let api_tags = genApiTagsByName(x)
-
-          return (
-            <TestCard
-              key={x}
-              api_name={x}
-              name={api_full_info.result.title}
-              description={api_full_info.result.notes}
-              tags={api_tags}
-              last_update={api_full_info.result.metadata_modified}
-            />
-          )
-        })
-      }
-    </Container>
+  var test = getMatchApiManifest('CCI')
+  console.log([...test])
+  return(
+    <>
+      <Container>
+        {
+          [...test].map( x => {
+            let api_full_info = getApiByName(x)
+            let api_tags = genApiTagsByName(x)
+            return(
+              <TestCard
+                key={x}
+                api_name={x}
+                name={api_full_info.result.title}
+                description={api_full_info.result.notes}
+                tags={api_tags}
+                last_update={api_full_info.result.metadata_modified}
+              />
+            )
+          })
+        }
+      </Container>
+    </>
   )
 }
 
 export default TestCards
+
+// function TestCards(){
+//   let {getMatchApiManifest, getApiByName, genApiTagsByName} = React.useContext(GlobalContext);
+
+//   return (
+//     <Container>
+//       {
+//         [...getMatchApiManifest('CCI')].map( x => {
+//           let api_full_info = getApiByName(x)
+//           let api_tags = genApiTagsByName(x)
+
+//           return (
+//             <TestCard
+//               key={x}
+//               api_name={x}
+//               name={api_full_info.result.title}
+//               description={api_full_info.result.notes}
+//               tags={api_tags}
+//               last_update={api_full_info.result.metadata_modified}
+//             />
+//           )
+//         })
+//       }
+//     </Container>
+//   )
+// }
+
+// export default TestCards

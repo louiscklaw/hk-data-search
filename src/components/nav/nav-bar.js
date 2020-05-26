@@ -30,6 +30,10 @@ function NavBar(){
             test_api_details
           </Link>
 
+          <Link to="/zh/test_link" className="navbar-item">
+            test_link
+          </Link>
+
         {/*
           <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">
