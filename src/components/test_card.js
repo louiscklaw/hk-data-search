@@ -19,7 +19,7 @@ function TestCard({api_name, name, description, tags, last_update}){
             <p>{description}</p>
             <div><p>tags:</p>{JSON.stringify(tags)}</div>
             <div><p>更新:</p>{last_update}</div>
-            <p><a href={`http://localhost:9000/zh/api_details/${api_name}`}>更多資料</a></p>
+            <p><a href={`/zh/api_details/${api_name}`}>更多資料</a></p>
           </div>
         </div>
       </div>
