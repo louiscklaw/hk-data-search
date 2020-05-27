@@ -45,7 +45,7 @@
       } ],
       "maintainer_phone": "2521 1636",
       "num_resources": 1,
-      "tags": [],
+      "tags": ["a","b","c"],
       "title": "CCI成份屋苑的物業資料",
       "groups": [ {
         "display_name": "房屋",

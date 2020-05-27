@@ -27,6 +27,7 @@ function convertCsvToJson( csv_in ) {
 
 exports.curl_fetch = functions.https.onRequest( ( request, response ) => {
   // handle wanted var not exist
+  console.log(request.body)
   let incoming_json = JSON.parse(request.body)
   if (Object.keys(incoming_json).indexOf('target_csv') > -1){
     let target_csv = JSON.parse( request.body ).target_csv

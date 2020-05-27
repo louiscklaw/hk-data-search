@@ -14,8 +14,8 @@ const Container = styled.div`
 `
 
 function TestCards(){
-  let {getMatchApiManifest, getApiByName, genApiTagsByName} = React.useContext(GlobalContext);
-  var test = getMatchApiManifest('CCI')
+  let {getMatchApiManifest, getApiByName, genApiTagsByName, search_term} = React.useContext(GlobalContext);
+  var test = getMatchApiManifest(search_term)
   console.log([...test])
   return(
     <>
