@@ -6,7 +6,7 @@ const ApiName = styled.div`
   padding-bottom: 5px;
 `
 
-function TestCard({api_name, name, description, tags, last_update}){
+function ApiCard({api_name, name, description, tags, last_update}){
 
   return(
     <div className="column is-2">
@@ -27,4 +27,4 @@ function TestCard({api_name, name, description, tags, last_update}){
   )
 }
 
-export default TestCard
+export default ApiCard

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import {GlobalContext} from '../context/GlobalContext'
 
-import TestCard from './api_card'
+import ApiCard from './api_card'
 
 const Container = styled.div`
   width: 90%;
@@ -25,7 +25,7 @@ function TestCards(){
             let api_full_info = getApiByName(x)
             let api_tags = genApiTagsByName(x)
             return(
-              <TestCard
+              <ApiCard
                 key={x}
                 api_name={x}
                 name={api_full_info.result.title}
