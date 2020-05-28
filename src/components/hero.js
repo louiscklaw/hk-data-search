@@ -9,7 +9,7 @@ import './hero.css'
 
 function Hero(){
   let {updateSearchTerm} = React.useContext(GlobalContext)
-  console.log(updateSearchTerm)
+
   return(
     <>
       <section className="hero is-info is-medium is-bold">
