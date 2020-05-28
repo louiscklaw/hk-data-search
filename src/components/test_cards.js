@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import {GlobalContext} from '../context/GlobalContext'
 
-import TestCard from './test_card'
+import TestCard from './api_card'
 
 const Container = styled.div`
   width: 90%;
