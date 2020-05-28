@@ -23,16 +23,20 @@ function NavBar(){
           </Link>
 
           <Link to="/zh/about" className="navbar-item">
-            關於我
+            關於這頁
           </Link>
 
+          <Link to="/zh/credits" className="navbar-item">
+            Credits
+          </Link>
+{/*
           <Link to="/zh/api_details/test_helloworld" className="navbar-item">
             test_api_details
           </Link>
 
           <Link to="/zh/test_link" className="navbar-item">
             test_link
-          </Link>
+          </Link> */}
 
         {/*
           <div className="navbar-item has-dropdown is-hoverable">

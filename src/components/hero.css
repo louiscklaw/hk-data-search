@@ -1,0 +1,17 @@
+/* .hero-bg::before {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  display: block;
+} */
+
+.hero-bg {
+  background-image: url('/hero_bg.jpg');
+  background-blend-mode: soft-light;
+  background-color: gray;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

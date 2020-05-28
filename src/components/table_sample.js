@@ -1,5 +1,7 @@
 import React from 'react'
+import Helloworld from './helloworld'
 
+import TestFetchJson from './test_fetch_json'
 import TestGetJson from './test_get_json'
 
 import {GlobalContext} from '../context/GlobalContext'
@@ -36,9 +38,14 @@ function ApiInfoTable({api_json}){
                     })}
                     {['url'].map(y => {
                       let test_get_csv = ''
-                      if (true){
+                      let target_url = x[y]
+                      if (target_url.search(/\.csv$/) > -1){
                         test_get_csv = <TestGetJson csv_url={x[y]}/>
                       }
+                      if (target_url.search(/\.json$/) > -1){
+                        test_get_csv = <TestFetchJson csv_url={x[y]}/>
+                      }
+
                       return(
                         <tr key={y}>
                           <td>{y}</td>

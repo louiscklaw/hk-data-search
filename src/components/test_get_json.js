@@ -11,7 +11,7 @@ function TestGetJson({csv_url}){
       <a className="button" onClick={(e) => {getJSON(e, csv_url)}}>Test getting json</a>
       <HighlightPre
         language="json"
-        content={JSON.stringify(json_in_csv_form.fetch_result || {result: 'fetching error'}, null, 2)}
+        content={JSON.stringify(json_in_csv_form.fetch_result, null, 2)}
         />
     </>
   )
