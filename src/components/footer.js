@@ -17,13 +17,13 @@ function Footer(){
 
                 <span className="footer-social-link">
                   <a href="https://github.com/louiscklaw/" className="social-link">
-                    <i class="fab fa-github-square fa-2x"></i>
+                    <i className="fab fa-github-square fa-2x"></i>
                   </a>
                 </span>
 
               </div>
           </div>
-          <div class="content has-text-centered">
+          <div className="content has-text-centered">
             <p>
               API demo board by <a href="https://portfolio.louislabs.com/">louiscklaw</a>
             </p>

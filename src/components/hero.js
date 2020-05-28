@@ -12,10 +12,11 @@ function Hero(){
 
   return(
     <>
+
       <section className="hero is-info is-medium is-bold">
         <div className="hero-bg">
           <div className="hero-head">
-            <NavBar />
+          <NavBar />
           </div>
           <div className="hero-body">
             <div className="container has-text-centered">

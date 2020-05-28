@@ -12,7 +12,8 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
+        {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" /> */}
+        <link rel="stylesheet" href="bulma.css" />
 
         <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 
@@ -31,6 +32,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+
       </body>
     </html>
   )
