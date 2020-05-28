@@ -20,9 +20,13 @@ function ApiCard({api_name, name, description, tags, last_update}){
             <h6 className="api-name">{name}</h6>
             <p className="api-description">{description}</p>
             <div>
-              <i class="fas fa-tags"></i>
+              <i className="fas fa-tags"></i>
               {tags.sort().map(x => {
-                return( <span class="tag is-primary is-light">{x}</span> )
+                return(
+                  <span key={x} className="tag is-primary is-light">
+                    {x}
+                  </span>
+                  )
               })}
             </div>
             <div className="api-lastupdate">
@@ -35,7 +39,7 @@ function ApiCard({api_name, name, description, tags, last_update}){
 
         <footer className="card-footer">
           {/* <div className="card-footer-item">
-            <a href="#"><i class="fas fa-bookmark"></i></a>
+            <a href="#"><i className="fas fa-bookmark"></i></a>
           </div> */}
           <div className="card-footer-item">
             <a className="api-more-info" href={`/zh/api_details/${api_name}`}>更多資料</a>

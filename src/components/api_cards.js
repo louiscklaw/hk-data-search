@@ -16,7 +16,8 @@ const Container = styled.div`
 function ApiCards(){
   let {getMatchApiManifest, getApiByName, genApiTagsByName, search_term} = React.useContext(GlobalContext);
   var test = getMatchApiManifest(search_term)
-  console.log([...test])
+  // console.log([...test])
+  var idx = 0;
   return(
     <>
       <Container>
@@ -26,7 +27,7 @@ function ApiCards(){
             let api_tags = genApiTagsByName(x)
             return(
               <ApiCard
-                key={x}
+                key={idx++}
                 api_name={x}
                 name={api_full_info.result.title}
                 description={api_full_info.result.notes}

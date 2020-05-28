@@ -50,9 +50,10 @@ class GlobalContextProvider extends React.Component {
     if(search_term.trim().length==0){
       return Object.entries(raw_all_api_manifest).map(x => x[0])
     }else{
-      return   Object.entries(raw_all_api_manifest)
-      .filter( (x) => { return x[1].result[field].search(search_term) > -1 })
-      .map(x => x[0])
+      return
+        Object.entries(raw_all_api_manifest)
+        .filter( (x) => { return x[1].result[field].search(search_term) > -1 })
+        .map(x => x[0])
     }
   }
 
