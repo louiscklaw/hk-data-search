@@ -48,20 +48,20 @@ class GlobalContextProvider extends React.Component {
 
   getResultsFromApiManifest = (search_term, field) => {
     if(search_term.trim().length==0){
-      return Object.entries(raw_all_api_manifest).map(x => x[0])
+      return Object.entries(raw_all_api_manifest).map(x => x[0]).sort()
     }else{
-      return
-        Object.entries(raw_all_api_manifest)
-        .filter( (x) => { return x[1].result[field].search(search_term) > -1 })
+      return Object.entries(raw_all_api_manifest)
+        .filter( (x) =>  x[1].result[field].search(search_term) > -1 )
         .map(x => x[0])
     }
   }
+
 
   getResourcesFromApiManifest = (search_term, field) => {
     return Object.entries( raw_all_api_manifest ).filter( x => {
       let found = false
       x[ 1 ].result.resources.forEach(x => {
-        if (x.description.search('CCI') > -1){
+        if (x.description.search(search_term) > -1){
           found = true
         }
       })
@@ -70,9 +70,36 @@ class GlobalContextProvider extends React.Component {
     .map(x => x[0])
   }
 
+  searchKeywordInField = (search_keyword, search_from_obj ,field_name) => {
+    return search_from_obj[field_name].search(search_keyword) > -1
+  }
+
+  searchFromResourcesDescription = (search_keyword) => {
+    let flatten_resources = []
+    Object.entries(raw_all_api_manifest)
+      .forEach( x => {
+        x[1].result.resources.forEach( xx => {
+          flatten_resources = [...flatten_resources, [x[0],xx]]
+        })
+      })
+
+    let search_from_resources_name = flatten_resources
+      .filter( x => this.searchKeywordInField(search_keyword, x[1], 'name'))
+      .map( x => x[0])
+    let search_from_resources_description = flatten_resources
+      .filter( x => this.searchKeywordInField(search_keyword, x[1], 'description'))
+      .map( x => x[0])
+    return [...search_from_resources_name, ...search_from_resources_description]
+  }
+
   getMatchApiManifest = (search_word) =>{
     // let filter_by_notes = raw_all_api_manifest.filter( (x) => x.notes.search('CCI') > -1 )
-    let test = new Set(this.getResultsFromApiManifest(search_word, 'title'))
+    let search_from_title = this.getResultsFromApiManifest(search_word, 'title')
+    let search_from_resources_description = this.searchFromResourcesDescription(search_word)
+
+    let combined_list = [...search_from_title, ...search_from_resources_description]
+
+    let test = new Set(combined_list)
     return test
   }
 
