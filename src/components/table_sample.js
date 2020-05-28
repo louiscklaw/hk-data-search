@@ -3,6 +3,7 @@ import Helloworld from './helloworld'
 
 import TestFetchJson from './test_fetch_json'
 import TestGetJson from './test_get_json'
+import TableTopic from './table_topic'
 
 import {GlobalContext} from '../context/GlobalContext'
 
@@ -16,13 +17,15 @@ function ApiInfoTable({api_json}){
           api_json.result.resources.map(x => {
             return(
               <>
-                <div style={{textAlign: 'left'}}>Resources</div>
-                <table className="table" style={{width:'80%', margin:'auto'}}>
+                <div style={{textAlign: 'left'}}>
+                  <TableTopic topic_name="Resources"/>
+                </div>
+                <table className="table" style={{ margin:'auto'}}>
                   <thead>
                     <tr>
-                      <th>title</th>
-                      <th>value</th>
-                      <td>Test</td>
+                      <th style={{width: '20%'}}>title</th>
+                      <th >value</th>
+                      <td style={{width: '40%'}}>Test</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -68,21 +71,27 @@ function ApiInfoTable({api_json}){
 
 
       <div>
-        <div style={{textAlign: 'left'}}>General</div>
-        <table className="table" style={{width:'80%', margin:'auto'}}>
+        <div style={{textAlign: 'left'}}>
+          <TableTopic topic_name="General"/>
+        </div>
+        <table className="table" style={{ margin:'auto'}}>
         <thead>
           <tr>
-            <th><abbr title="Position">property name</abbr></th>
-            <th>value</th>
+            <th style={{width: '20%'}}>
+              <abbr title="Position">property name</abbr>
+            </th>
+            <th>
+              value
+            </th>
           </tr>
         </thead>
         <tbody>
             {
-              ['title','type','notes','revision_id','url', ].map(x => {
+              ['title','type','notes','revision_id', 'url' ].map(x => {
                 return(
                   <tr key={x}>
                     <th>result.{x}</th>
-                    <td>{api_json.result[x]==null? "Null": api_json.result[x]}</td>
+                    <td>{api_json.result[x]==null? " ---- ": api_json.result[x]}</td>
                   </tr>
                 )
               })

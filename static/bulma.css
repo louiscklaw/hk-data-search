@@ -7127,3 +7127,9 @@ label.panel-block {
     background-color: #95a5a6;
     color: #2c3e50;
     background-image: unset; } }
+
+h2 {
+  font-size: 1.4em; }
+
+h3 {
+  font-size: 1.2em; }

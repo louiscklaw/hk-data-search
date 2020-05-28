@@ -13,7 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
         {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" /> */}
-        <link rel="stylesheet" href="bulma.css" />
+        <link rel="stylesheet" href="/bulma.css" />
 
         <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
 

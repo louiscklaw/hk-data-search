@@ -4,6 +4,7 @@ import {Link} from 'gatsby'
 import ApiInfoTable from './table_sample'
 import PrettyRAWJson from './pretty_raw_json'
 
+import PageHead from './page_template/page_head'
 
 import {GlobalContext} from '../context/GlobalContext'
 
@@ -13,19 +14,10 @@ function ApiDetails(props){
 
   return(
 
-    <div style={{'margin':'auto'}}>
-
-      <div style={{textAlign:"center",padding: '1em'}}>
-        Api details for {props.api_name}
-      </div>
-
+    <div style={{width: '80%',margin:'auto'}}>
       <Link to="/zh">back</Link>
 
-      {/* TODO: implement this ? */}
-      <div>tags</div>
-
-      {/* TODO: implement this ? */}
-      <div>api details</div>
+      <PageHead api_name={props.api_name}/>
 
       <div style={{margin:'auto',textAlign:'center'}}>
         <ApiInfoTable api_json={api_json}/>
