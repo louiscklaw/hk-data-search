@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import './api_card.css'
+
 const ApiName = styled.div`
-  font-size: 0.8em;
+  font-size: 0.5em;
   padding-bottom: 5px;
 `
 
@@ -15,13 +17,32 @@ function ApiCard({api_name, name, description, tags, last_update}){
         <div className="card-content">
           <div className="content">
             <ApiName>{api_name}</ApiName>
-            <h6>{name}</h6>
+            <h6 className="api-name">{name}</h6>
             <p className="api-description">{description}</p>
-            <div><p>tags:</p>{JSON.stringify(tags)}</div>
-            <div><p>更新:</p>{last_update}</div>
-            <p><a href={`/zh/api_details/${api_name}`}>更多資料</a></p>
+            <div>
+              <i class="fas fa-tags"></i>
+              {tags.sort().map(x => {
+                return( <span class="tag is-primary is-light">{x}</span> )
+              })}
+            </div>
+            <div className="api-lastupdate">
+              <span>最後更新:</span>
+              <span>{last_update}</span>
+            </div>
+
           </div>
         </div>
+
+        <footer className="card-footer">
+          {/* <div className="card-footer-item">
+            <a href="#"><i class="fas fa-bookmark"></i></a>
+          </div> */}
+          <div className="card-footer-item">
+            <a className="api-more-info" href={`/zh/api_details/${api_name}`}>更多資料</a>
+          </div>
+
+
+        </footer>
       </div>
     </div>
   )

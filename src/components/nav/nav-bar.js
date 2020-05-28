@@ -80,7 +80,7 @@ function NavBar(){
               </a>
 
               <a className="button is-light">
-                <i className="fab fa-github fa-2x"></i>
+                <i className="fab fa-github"></i>
               </a>
 
             </div>
