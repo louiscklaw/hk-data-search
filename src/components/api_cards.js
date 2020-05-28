@@ -13,7 +13,7 @@ const Container = styled.div`
   align-content: flex-start;
 `
 
-function TestCards(){
+function ApiCards(){
   let {getMatchApiManifest, getApiByName, genApiTagsByName, search_term} = React.useContext(GlobalContext);
   var test = getMatchApiManifest(search_term)
   console.log([...test])
@@ -41,7 +41,7 @@ function TestCards(){
   )
 }
 
-export default TestCards
+export default ApiCards
 
 // function TestCards(){
 //   let {getMatchApiManifest, getApiByName, genApiTagsByName} = React.useContext(GlobalContext);
